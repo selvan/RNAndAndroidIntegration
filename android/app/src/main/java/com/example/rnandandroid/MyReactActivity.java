@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.KeyEvent;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactPackage;
@@ -18,7 +20,7 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.List;
 
-public class MyReactActivity extends Activity implements DefaultHardwareBackBtnHandler {
+public class MyReactActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
 
     private final int OVERLAY_PERMISSION_REQ_CODE = 1;
 
@@ -63,6 +65,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == OVERLAY_PERMISSION_REQ_CODE) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (!Settings.canDrawOverlays(this)) {
@@ -70,7 +73,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
                 }
             }
         }
-        mReactInstanceManager.onActivityResult( this, requestCode, resultCode, data );
+        mReactInstanceManager.onActivityResult(this, requestCode, resultCode, data);
     }
 
     @Override
