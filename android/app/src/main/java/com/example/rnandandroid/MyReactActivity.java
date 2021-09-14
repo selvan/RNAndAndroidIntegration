@@ -32,6 +32,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
 
         mReactRootView = new ReactRootView(this);
         List<ReactPackage> packages = new PackageList(getApplication()).getPackages();
+        packages.add(new MyAppPackage());
         // Packages that cannot be autolinked yet can be added manually here, for example:
         // packages.add(new MyReactNativePackage());
         // Remember to include them in `settings.gradle` and `app/build.gradle` too.
