@@ -20,6 +20,10 @@ https://medium.com/@john1jan/communicating-to-and-from-native-ui-components-in-r
 https://pspdfkit.com/blog/2018/advanced-techniques-for-react-native-ui-components/
 https://stackoverflow.com/questions/39228618/how-to-call-a-native-view-method-from-javascript
 
+## Cheat sheet - Bridging Native & React for iOS & Android
+https://gist.github.com/chourobin/f83f3b3a6fd2053fad29fff69524f91c
+
+
 ### Development
 yarn start
 
