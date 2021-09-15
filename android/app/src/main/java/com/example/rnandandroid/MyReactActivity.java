@@ -29,7 +29,7 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(null);
         SoLoader.init(this, false);
 
         mReactRootView = new ReactRootView(this);
