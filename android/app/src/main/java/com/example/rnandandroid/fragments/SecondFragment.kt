@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.rnandandroid.R
 import com.example.rnandandroid.databinding.FragmentSecondBinding
@@ -36,6 +37,9 @@ class SecondFragment : Fragment() {
 
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+
+//            val navHostFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//            navHostFragment.navController.navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
     }
 

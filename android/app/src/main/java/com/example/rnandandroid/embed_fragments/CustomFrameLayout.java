@@ -46,4 +46,5 @@ public class CustomFrameLayout extends FrameLayout {
             layout(getLeft(), getTop(), getRight(), getBottom());
         }
     };
+    
 }
