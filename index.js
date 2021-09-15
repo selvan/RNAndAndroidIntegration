@@ -8,10 +8,12 @@ import {
 
 
 import { NativeModules, Button } from 'react-native';
+import NativeFragmentView from "./NativeAndroidFragmentView"
 
 const HelloWorld = () => {
   return (
     <View style={styles.container}>
+      <NativeFragmentView style={{ width: "100%", height: "100%" }}/>
       <Text style={styles.hello}>Hello, World</Text>
       <Button
                 onPress={() => NativeModules.StartActivityModule.startFragmentActivity()}
