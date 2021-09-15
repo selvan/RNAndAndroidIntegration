@@ -28,7 +28,7 @@
 <!--    tools:context=".MyReactActivity"-->
 <!--     />-->
 
-<com.example.rnandandroid.CustomFrameLayout android:id="@+id/fragment_container_view"
+<com.example.rnandandroid.embed_fragments.CustomFrameLayout android:id="@+id/fragment_container_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -43,5 +43,5 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         />
 
-</com.example.rnandandroid.CustomFrameLayout>
+</com.example.rnandandroid.embed_fragments.CustomFrameLayout>
 

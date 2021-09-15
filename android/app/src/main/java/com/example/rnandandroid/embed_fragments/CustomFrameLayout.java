@@ -1,4 +1,4 @@
-package com.example.rnandandroid;
+package com.example.rnandandroid.embed_fragments;
 
 import android.content.Context;
 import android.util.AttributeSet;

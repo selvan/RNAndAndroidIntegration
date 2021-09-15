@@ -1,4 +1,4 @@
-package com.example.rnandandroid
+package com.example.rnandandroid.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.rnandandroid.R
 import com.example.rnandandroid.databinding.FragmentFirstBinding
 
 /**

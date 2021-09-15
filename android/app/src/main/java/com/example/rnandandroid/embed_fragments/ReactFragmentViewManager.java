@@ -1,4 +1,4 @@
-package com.example.rnandandroid;
+package com.example.rnandandroid.embed_fragments;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentContainerView;
 
+import com.example.rnandandroid.R;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ReactStylesDiffMap;
 import com.facebook.react.uimanager.SimpleViewManager;
