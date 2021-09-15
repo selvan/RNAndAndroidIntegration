@@ -2,10 +2,14 @@ package com.example.rnandandroid.embed_fragments;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.rnandandroid.R;
 
 /*
     https://github.com/facebook/react-native/issues/11829
@@ -46,5 +50,10 @@ public class CustomFrameLayout extends FrameLayout {
             layout(getLeft(), getTop(), getRight(), getBottom());
         }
     };
-    
+
+    @Override
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Log.d("CustomFrameLayout", "Detached");
+    }
 }

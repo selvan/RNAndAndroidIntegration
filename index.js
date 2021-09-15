@@ -26,7 +26,7 @@ function HomeScreen({ navigation }) {
       <View style={styles.add_margin}>
         <Button style={styles.add_margin}
           title="Android Fragment"
-          onPress={() => navigation.navigate('AndroidFragmentScreen')}
+          onPress={() => navigation.push('AndroidFragmentScreen')}
         />
       </View>
     </View>
@@ -35,7 +35,9 @@ function HomeScreen({ navigation }) {
 
 function AndroidFragmentScreen({ navigation }) {
   return (
-    <NativeFragmentView style={{ width: "100%", height: "100%" }}/>
+    <View style={styles.container} key={Date.now()}>
+      <NativeFragmentView style={{ width: "100%", height: "100%" }}/>
+    </View>
   );
 }
 
