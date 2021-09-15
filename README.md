@@ -11,6 +11,7 @@ https://reactnative.dev/docs/native-components-android
 https://reactnative.dev/docs/native-modules-intro
 
 ## Native Android Fragments in React Native
+https://shopify.engineering/creating-native-components-accept-react-native-subviews
 https://stefan-majiros.com/blog/native-android-fragments-in-react-native/
 
 ## Communicating To and From Native UI Components in React Native Android

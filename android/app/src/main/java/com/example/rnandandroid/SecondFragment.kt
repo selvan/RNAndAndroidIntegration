@@ -23,7 +23,7 @@ class SecondFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Log.d("SecondFragment", "View is created")
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
