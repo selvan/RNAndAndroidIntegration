@@ -34,9 +34,9 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
+            Log.d("FirstFragment", "Button is clicked")
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
-        Log.d("FirstFragment", "View is created")
     }
 
     override fun onDestroyView() {
