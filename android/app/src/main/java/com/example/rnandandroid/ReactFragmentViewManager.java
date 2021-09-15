@@ -15,7 +15,7 @@ import com.facebook.react.uimanager.StateWrapper;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 
-public class ReactFragmentViewManager extends SimpleViewManager<FragmentContainerView> {
+public class ReactFragmentViewManager extends SimpleViewManager<FrameLayout> {
 
     public static final String REACT_NAME = "NativeFragmentView";
 
@@ -33,8 +33,8 @@ public class ReactFragmentViewManager extends SimpleViewManager<FragmentContaine
 
     @NonNull
     @Override
-    protected FragmentContainerView createViewInstance(@NonNull ThemedReactContext reactContext) {
-        FragmentContainerView fragmentContrainerView = (FragmentContainerView) LayoutInflater.from(reactContext).inflate(
+    protected FrameLayout createViewInstance(@NonNull ThemedReactContext reactContext) {
+        FrameLayout fragmentContrainerView = (FrameLayout) LayoutInflater.from(reactContext).inflate(
                 R.layout.fragment_container_view,
                 null
         );
