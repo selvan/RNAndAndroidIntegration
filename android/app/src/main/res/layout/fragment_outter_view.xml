@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     >
 
-    <FrameLayout
+    <com.example.rnandandroid.embed_fragments.CustomFrameLayout
         android:id="@+id/your_placeholder"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </FrameLayout>
+    </com.example.rnandandroid.embed_fragments.CustomFrameLayout>
 
 </LinearLayout>
 

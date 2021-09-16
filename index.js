@@ -12,6 +12,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import NativeFragmentView from "./NativeAndroidFragmentView"
+import { Dimensions } from "react-native";
+
+var width = Dimensions.get('window').width; //full width
+var height = Dimensions.get('window').height; //full height
 
 function HomeScreen({ navigation }) {
   return (
@@ -37,6 +41,7 @@ function AndroidFragmentScreen({ navigation }) {
   return (
     <View style={styles.container} key={Date.now()}>
       <NativeFragmentView style={{ width: "100%", height: "100%" }}/>
+      <View style={[styles.overlay, { height: 360}]} />
     </View>
   );
 }
@@ -80,6 +85,15 @@ var styles = StyleSheet.create({
   },
   add_margin: {
     margin: 20
+  },
+  overlay: {
+    flex: 1,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: width,
+    opacity: 0.5,
+    backgroundColor: 'black',
   }
 });
 
