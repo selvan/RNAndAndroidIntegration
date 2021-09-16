@@ -20,8 +20,14 @@ public class CustomFragment extends Fragment {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.d("CustomFragment", "CustomFragment is destroied");
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.d("CustomFragment", "in Destrpy view");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.d("CustomFragment", "onDetach");
     }
 }
