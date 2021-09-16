@@ -1,7 +1,7 @@
 package com.example.rnandandroid.embed_fragments;
 
 import android.view.LayoutInflater;
-import android.widget.FrameLayout;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 
@@ -10,7 +10,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 
-public class ReactFragmentViewManager extends SimpleViewManager<FrameLayout> {
+public class ReactFragmentViewManager extends SimpleViewManager<View> {
 
     public static final String REACT_NAME = "NativeFragmentView";
 
@@ -28,11 +28,16 @@ public class ReactFragmentViewManager extends SimpleViewManager<FrameLayout> {
 
     @NonNull
     @Override
-    protected FrameLayout createViewInstance(@NonNull ThemedReactContext reactContext) {
-        FrameLayout fragmentContrainerView = (FrameLayout) LayoutInflater.from(reactContext).inflate(
-                R.layout.fragment_container_view,
+    protected View createViewInstance(@NonNull ThemedReactContext reactContext) {
+        View fragmentContrainerView = (View) LayoutInflater.from(reactContext).inflate(
+                R.layout.fragment_outter_view,
                 null
         );
+
+//        FragmentTransaction ft = this.mCallerContext.getBaseContext().getApplicationContext(). .getCurrentActivity().getFragmentManager().beginTransaction();
+//        ft.replace(R.id.your_placeholder, (Fragment) new CustomFragment());
+//        ft.commit();
+
         return fragmentContrainerView;
     }
 }
