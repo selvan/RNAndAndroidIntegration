@@ -41,7 +41,7 @@ function AndroidFragmentScreen({ navigation }) {
   return (
     <View style={styles.container} key={Date.now()}>
       <NativeFragmentView style={{ width: "100%", height: "100%" }}/>
-      <View style={[styles.overlay, { height: 360}]} />
+      <View style={[styles.overlay, { height: height/2}]} />
     </View>
   );
 }
