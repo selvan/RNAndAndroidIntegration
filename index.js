@@ -48,7 +48,7 @@ function AndroidFragmentScreen({ navigation }) {
     return () => {
       eventListener.remove();
     }
-  }, [showOverlay]);
+  }, [showOverlay]); // Only re-subscribe if showOverlay changes
 
   return (
     <View style={styles.container} key={Date.now()}>
