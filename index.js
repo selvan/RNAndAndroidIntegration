@@ -48,7 +48,7 @@ function AndroidFragmentScreen({ navigation }) {
     return () => {
       eventListener.remove();
     }
-  }, []);
+  }, [showOverlay]);
 
   return (
     <View style={styles.container} key={Date.now()}>

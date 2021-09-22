@@ -28,3 +28,5 @@ https://gist.github.com/chourobin/f83f3b3a6fd2053fad29fff69524f91c
 ### Development
 yarn start
 
+### RN Hoocks
+https://reactjs.org/docs/hooks-effect.html
