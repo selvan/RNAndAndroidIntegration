@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 
-import { NativeModules, Button } from 'react-native';
+import { NativeModules, NativeEventEmitter, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -38,10 +38,22 @@ function HomeScreen({ navigation }) {
 }
 
 function AndroidFragmentScreen({ navigation }) {
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  useEffect(() => {
+    const eventEmitter = new NativeEventEmitter();
+    const eventListener = eventEmitter.addListener('showOverlay', (event) => {
+      setShowOverlay(event.shouldShow);
+    });    
+    return () => {
+      eventListener.remove();
+    }
+  }, []);
+
   return (
     <View style={styles.container} key={Date.now()}>
       <NativeFragmentView style={{ width: "100%", height: "100%" }}/>
-      <View style={[styles.overlay, { height: height/2}]} />
+      {showOverlay && <View style={[styles.overlay, { height: height/2}]} />}
     </View>
   );
 }
