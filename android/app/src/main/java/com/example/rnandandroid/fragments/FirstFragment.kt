@@ -8,8 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.example.rnandandroid.MyReactActivity
 import com.example.rnandandroid.R
 import com.example.rnandandroid.databinding.FragmentFirstBinding
+import com.facebook.react.bridge.Arguments
+import com.facebook.react.bridge.WritableMap
+
+
+
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -34,6 +40,17 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if(activity is MyReactActivity) {
+            binding.fireAnEvent.setOnClickListener {
+                val myReactActivity = activity as MyReactActivity
+                val params: WritableMap = Arguments.createMap()
+                params.putString("shouldShow", true.toString())
+                myReactActivity.sendAnEventToRN("showOverlay", params)
+            }
+        } else {
+            binding.fireAnEvent.visibility = View.GONE
+        }
+        
         binding.buttonFirst.setOnClickListener {
             Log.d("FirstFragment", "Button is clicked")
 

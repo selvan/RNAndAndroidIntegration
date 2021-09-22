@@ -6,16 +6,20 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.KeyEvent;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.soloader.SoLoader;
 
 import java.util.List;
@@ -127,5 +131,18 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
             return true;
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    public void sendAnEventToRN(String eventName,
+                           @Nullable WritableMap params) {
+
+        if(mReactInstanceManager == null) {
+            return;
+        }
+
+        Log.d("MyReactActivity", params.toString());
+        mReactInstanceManager.getCurrentReactContext()
+                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                .emit(eventName, params);
     }
 }
